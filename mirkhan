@@ -1,0 +1,371 @@
+# Mirkhan Problems Solving NND 
+# Python Code
+
+# Hard limit function 
+# P2.1
+# python install codes 
+from pip._internal.main import main as pip_main
+pip_main(["install","numpy"])
+pip_main(["install","matplotlib"])
+pip_main(["install","pandas"])
+# from command prompt directory: /python/ script 
+# run: pip install pandas 
+# run: pip install matplotlib
+#  
+# python import library codes 
+import numpy as np
+import pandas as pd
+import math
+import matplotlib.pyplot as plt 
+from numpy import array
+# -----------------------------------
+
+# Python code
+
+p = 2;               # input of network 
+w = 2.3;             # weight of network
+b = -3;              # bias of network
+n = w*p + b          # output of network
+n 
+# -----------------------------------
+
+# Hard limit function
+# element computation 
+def hardlim(x):
+  if(x >= 0):
+    return 1
+  else:
+    return 0 
+
+a = hardlim(n) 
+a 
+# -----------------------------------
+
+# Python code
+# element computation 
+
+# Hard limit function
+def hardlim(x):
+  if(x >= 0):
+    return 1
+  else:
+    return 0 
+
+# Symmetrical Hard limit
+def hardlims(x): 
+  x = np.array(x)
+  y = np.array(x)
+  return np.where(y < 0, -1, 1)
+
+# Linear 
+def purelin(x):
+   return(x)
+
+# Saturating Linear
+def satlin(x):
+  if(x < 0):
+    return(0)
+  elif(x >= 0 and x <= 1):
+   return(x)
+  else:
+    return(1) 
+
+# Simmetrical Saturating Linear
+def satlins(x):
+  if(x < 0):
+    return(-1)
+  elif(x >= 0 and x <= 1):
+   return(x)
+  else:
+    return(1)
+
+# log-sigmid
+import math 
+def logsig(x):
+   return(1/(1+math.exp(-x))) 
+
+# Hyperbolic Tangent Sigmoid
+def tansig(x):
+  return(math.tanh(x))
+
+# Positive Linear
+def poslin(x):
+  if(x < 0):
+    return(0)
+  else:
+    return(x)  
+
+# Competitive
+def compet(x):
+  if(x == max(x,x)):
+    return(1)
+  else:
+    return(0)  
+# -----------------------------------
+
+a1 = 1.6      # or a1 = [1.6]
+
+# Hard limit 
+hardlim(a1)
+
+# Symmetrical Hard limit
+hardlims(a1)
+
+# Linear 
+purelin(a1)
+
+# Saturating Linear 
+satlin(a1)
+
+# Simmetrical Saturating Linear
+satlins(a1)
+
+# log-sigmid
+logsig(a1)
+
+# Hyperbolic Tangent Sigmoid
+tansig(a1)
+
+# Positive Linear
+poslin(a1)
+
+# Competitive
+compet(a1)
+# -----------------------------------
+
+# Python code
+# vector computation 
+
+# Hard limit function
+def hardlim(x): 
+  x = np.array(x)
+  y = np.array(x)
+  for i in range(len(x)): 
+    if (x[i] < 0):
+      y[i] = 0
+    else: 
+      y[i] = 1
+  return y  
+
+# Symmetrical Hard limit
+def hardlims(x): 
+  y = np.array(x)
+  for i in range(len(x)): 
+    if (x[i] < 0):
+      y[i] = -1 
+    else: 
+      y[i] = 1
+  return y  
+
+# Linear 
+def purelin(x):
+   return(x)
+
+# Saturating Linear
+ def satlin(x): 
+  x = np.array(x)
+  y = np.array(x)
+  for i in range(len(x)): 
+    if (y[i] < 0):
+      y[i] = 0
+    else:
+      if (y[i] > 1):
+        y[i] = 1
+  return y 
+
+# Simmetrical Saturating Linear
+def satlins(x):
+  y = np.array(x)
+  n = len(y)
+  for i in range(n):
+    if (y[i] < 0):
+           y[i] = -1
+    elif (y[i] > 1):
+           y[i] = 1
+  return y
+
+# log-sigmid
+import math 
+def logsig(x):
+   return(1/(1+math.exp(-x))) 
+
+# Hyperbolic Tangent Sigmoid
+def tansig(x):
+  return(math.tanh(x))
+
+# Positive Linear 
+def poslin(x): 
+  x = np.array(x)
+  y = np.array(x)
+  for i in range(len(x)): 
+    if (y[i] < 0):
+      y[i] = 0
+  return y 
+
+# Competitive
+def compet(x):
+  if(x == max(x,x)):
+    return(1)
+  else:
+    return(0)  
+# -----------------------------------
+
+b1 = [-3, 2]      # b1 = array([-3, 2])
+
+# Hard limit 
+hardlim(b1)
+
+# Symmetrical Hard limit
+hardlims(b1)
+
+# Linear 
+purelin(b1)
+
+# Saturating Linear 
+satlin(b1)
+
+# Simmetrical Saturating Linear
+satlins(b1)
+
+# log-sigmid
+logsig(b1)
+
+# Hyperbolic Tangent Sigmoid
+tansig(b1)
+
+# Positive Linear
+poslin(b1)
+
+# Competitive
+compet(b1)
+# -----------------------------------
+
+# Python code
+# Matrix Computation
+
+# Hard limit 
+def dim(x):
+    row = len(x)
+    column = len(x[0])
+    return row, column
+
+def hardlim(x): 
+  y = np.array(x)
+  n = dim(y)[0]
+  m = dim(y)[1]  
+  for i in range(n-1):
+     for j in range(m-1):
+        if (y[i][j] < 0):
+           y[i][j] = 0
+        else:
+           y[i][j] = 1
+  return y  
+
+# Symmetrical Hard limit 
+def hardlims(x): 
+  y = np.array(x)
+  n = dim(y)[0]
+  m = dim(y)[1]  
+  for i in range(n-1):
+     for j in range(m-1):
+        if (y[i][j] < 0):
+           y[i][j] = -1
+        else
+           y[i][j] = 1
+  return y  
+
+# Linear 
+def purelin(x):
+   return(x)
+
+# Saturating Linear
+def satlin(x): 
+  y = np.array(x)
+  n = dim(y)[0]
+  m = dim(y)[1]  
+  for i in range(n-1):
+     for j in range(m-1):
+        if (y[i][j] < 0):
+           y[i][j] = 0
+        elif (y[i][j] > 1):
+           y[i][j] = 1
+  return y  
+
+# Simmetrical Saturating Linear
+def satlins(x): 
+  y = np.array(x)
+  n = dim(y)[0]
+  m = dim(y)[1]  
+  for i in range(n-1):
+     for j in range(m-1):
+        if (y[i][j] < 0):
+           y[i][j] = -1
+        elif (y[i][j] > 1):
+           y[i][j] = 1
+  return y
+
+# log-sigmid
+import math 
+def logsig(x):
+   return(1/(1+math.exp(-x)))
+
+# Hyperbolic Tangent Sigmoid
+def tansig(x):
+  return(math.tanh(x))
+
+# Positive Linear
+def poslin(x): 
+  y = np.array(x)
+  n = dim(y)[0]
+  m = dim(y)[1]  
+  for i in range(n-1):
+     for j in range(m-1):
+        if (y[i][j] < 0):
+           y[i][j] = 0
+  return y  
+
+# Competitive 
+def compet(x): 
+  x = np.array(x)
+  n = dim(x)[0]
+  m = dim(x)[1]
+  y = np.zeros((n, m) , dtype=np.int64)
+  maxi = np.max(x)
+  for i in range(n-1):
+     for j in range(m-1):
+        if (x[i][j] == maxi):
+           y[i][j] = 1
+        else:
+           y[i][j] = 0
+  return y  
+# -----------------------------------
+
+c1 = np.array([[1.6, -1], [0.5, 0]])
+
+# Hard limit 
+hardlim(c1)
+
+# Symmetrical Hard limit
+hardlims(c1)
+
+# Linear 
+purelin(c1)
+
+# Saturating Linear 
+satlin(c1)
+
+# Simmetrical Saturating Linear
+satlins(c1)
+
+# log-sigmid
+logsig(c1)
+
+# Hyperbolic Tangent Sigmoid
+tansig(c1)
+
+# Positive Linear
+poslin(c1)
+
+# Competitive
+compet(c1)
+# -----------------------------------
