@@ -1,0 +1,66 @@
+# Mirkhan Problems Solving NND 
+% Matlab code
+
+% Hard limit function
+% P2.1
+% Matlab code
+
+p = 2;               % input of network 
+w = 2.3;             % weight of network
+b = -3;              % bias of network
+n = w*p + b          % output of network
+a = hardlim(n)       % output of network function
+n 
+a
+% -----------------------------------
+
+% define and run Matlab functions with different inputs  
+a1 = 1.6; 
+b1 = [3 -1];
+c1 = [1.6, -1; 0.5, 0]; 
+
+% Hard limit 
+hardlim(a1)
+hardlim(b1)
+hardlim(c1)
+
+% Symmetrical Hard limit
+hardlims(a1)
+hardlims(b1)
+hardlims(c1)
+
+% Linear 
+purelin(a1)
+purelin(b1)
+purelin(c1)
+
+% Saturating Linear 
+satlin(a1)
+satlin(b1)
+satlin(c1)
+
+% Simmetrical Saturating Linear
+satlins(a1)
+satlins(b1)
+satlins(c1)
+
+% log-sigmid
+logsig(a1)
+logsig(b1)
+logsig(c1)
+
+% Hyperbolic Tangent Sigmoid
+tansig(a1)
+tansig(b1)
+tansig(c1)
+
+% Positive Linear
+poslin(a1)
+poslin(b1)
+poslin(c1)
+
+% Competitive
+compet(a1)
+compet(b1)
+compet(c1)
+% -----------------------------------
